@@ -27,7 +27,10 @@ import com.dgaznares.mscurso.producto.infraestructure.adapters.in.web.dtos.Produ
 import com.dgaznares.mscurso.producto.infraestructure.adapters.in.web.mappers.CategoryAnalysisToCategoryAnalysisDTOConverter;
 import com.dgaznares.mscurso.producto.infraestructure.adapters.in.web.mappers.ProductToProductDTOConverter;
 
+import lombok.extern.slf4j.Slf4j;
+
 @WebMvcTest (ProductController.class)
+@Slf4j
 class ProductControllerTest {
 	
 	@Autowired
@@ -104,7 +107,7 @@ class ProductControllerTest {
 		.andExpect(status().isOk())
 		.andExpect(jsonPath("$[0].category").value(Category.TECH.name()))
 		.andExpect(jsonPath("$[0].averagePrice").value(new BigDecimal("433.5")));
-		
+		log.info("Prueba terminada");
 	}
 	
 

@@ -107,7 +107,7 @@ class ProductControllerTest {
 		.andExpect(status().isOk())
 		.andExpect(jsonPath("$[0].category").value(Category.TECH.name()))
 		.andExpect(jsonPath("$[0].averagePrice").value(new BigDecimal("433.5")));
-		log.info("Prueba terminada");
+		log.info("Prueba terminada. Comprobacion PR");
 	}
 	
 
